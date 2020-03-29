@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <style>
+         .debug div{padding: 0 5px;}
+         .debug div:nth-child(odd) {background: #000;}
+         .debug div:nth-child(even) {background: #777;}
+         .overly-loader {
+         position: fixed;
+         background: #00000033;
+         width: 100%;
+         height: 100%;
+         top: 0;
+         left: 0;
+         z-index: 9;
+         text-align: center;
+         }
+         .spinner-border {margin-top: 50vh;}
+      </style>
+      <style>
+         /* The Modal (background) */
+         .modal {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 1; /* Sit on top */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+         /* Modal Content/Box */
+         .modal-content {
+         background-color: #fefefe;
+         margin: 15% auto; /* 15% from the top and centered */
+         padding: 20px;
+         border: 1px solid #888;
+         width: 80%; /* Could be more or less, depending on screen size */
+         }
+         /* The Close Button */
+         .close {
+         color: #aaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close:hover,
+         .close:focus {
+         color: black;
+         text-decoration: none;
+         cursor: pointer;
+         }
+      </style>
+      <style>
+         /* The Modal (background) */
+         .modal2 {
+         display: none; /* Hidden by default */
+         position: fixed; /* Stay in place */
+         z-index: 3; /* Sit on top */
+         left: 0;
+         top: 0;
+         width: 100%; /* Full width */
+         height: 100%; /* Full height */
+         overflow: auto; /* Enable scroll if needed */
+         background-color: rgb(0,0,0); /* Fallback color */
+         background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+         }
+         /* Modal Content/Box */
+         .modal-content2 {
+         background-color: #fefefe;
+         margin: 15% auto; /* 15% from the top and centered */
+         padding: 20px;
+         border: 1px solid #888;
+         width: 80%; /* Could be more or less, depending on screen size */
+         }
+         /* The Close Button */
+         .close2 {
+         color: #aaa;
+         float: right;
+         font-size: 28px;
+         font-weight: bold;
+         }
+         .close2:hover,
+         .close2:focus {
+         color: black;
+         text-decoration: none;
+         cursor: pointer;
+         }
+      </style>
+   </head>
+	<body>
+		<div class='container mt-5'>
+			<div class="overly-loader" style="display: none">
+				<div class="spinner-border" role="status">
+					<span class="sr-only">Loading...</span>
+				</div>
+			</div>
+			<h2>Interfaces </h2>
+			
+			<div class="alert"></div>
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link" id="owner-tab" data-toggle="tab" href="#owner" role="tab" aria-controls="owner" aria-selected="true" onclick="$('#visitor-tab').hide();$('#nuki-tab').hide();">Host</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="visitor-tab" data-toggle="tab" href="#visitor" role="tab" aria-controls="visitor" aria-selected="false" onclick="$('#owner-tab').hide();$('#nuki-tab').hide();">Guest</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="nuki-tab" data-toggle="tab" href="#nuki" role="tab" aria-controls="nuki" aria-selected="false"  onclick="$('#owner-tab').hide();$('#visitor-tab').hide();">Nuki</a>
+				</li>
+			</ul>
+			<div class="tab-content p-2">
+				<div class="tab-pane fade" id="owner" role="tabpanel" aria-labelledby="owner-tab">
+					<h3>Host</h3>
+					<div class='owner-fields'>
+						<div class='step step-one'>
+							<div class="form-group">
+								<label for="price">Rent</label>
+								<input type="text" class="form-control price" value="30">
+							</div>
+							<div class="form-group">
+								<label for="depositHost">Deposit Host</label>
+								<input type="text" class="form-control depositHost" value="10">
+							</div>
+							<div class="form-group">
+								<label for="depositGuest">Deposit Guest</label>
+								<input type="text" class="form-control depositGuest" value="10">
+							</div>
+							<div class="form-group">
+								<label for="cp">Contract Policy</label>
+								<input type="text" class="form-control cp" value="0">
+							</div>
+						</div>
+					</div>
+					
+					<div class="btn-group">
+						<button class="btn btn-primary contract-init">Contract initialisation</button>
+						<button class="btn btn-primary cancellation" disabled>Cancellation</button>
+					</div>
+				</div>
+				
+				<div class="tab-pane fade" id="visitor" role="tabpanel" aria-labelledby="visitor-tab">
+					<h3>Guest</h3>
+					<div class="step step-one">
+						<div class="form-group">
+							<label for="price">Rent Price</label>
+							<input type="text" class="form-control price">
+							<label for="depositGuest">Deposit</label>
+							<input type="text" class="form-control depositGuest">
+						</div>
+					</div>
+					
+					<div class='step step-three' style="display:none">
+						<div class="form-group">
+							<div class="btn-group">
+								<button class="btn btn-primary renewContractBut" id="renewContractBut">Leave Contract</button>
+								<button class="btn btn-primary issueCancel" id="issueCancel">Accept Refund</button>
+							</div>
+						</div>
+					</div>
+					
+				   <div class="btn-group">
+					  <button class="btn btn-primary sendPrice">Send</button>
+					  <button class="btn btn-primary Issues" id="issuesButton" disabled>Complain</button>
+					  <button class="btn btn-primary cancellation" disabled>Cancellation</button>
+				   </div>
+				</div>
+				
+				<div class="tab-pane fade" id="nuki" role="tabpanel" aria-labelledby="nuki-tab">
+					<div class="step step-one">
+						<div class="form-group">
+							<button class="btn btn-primary nukiBtn">Door Opened</button>
+						</div>
+					</div>
+					<div class="step step-two">
+						<div class="form-group">
+							<button class="btn btn-primary nukiEnd" disabled>End Of Rent</button>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+		</div>
+      <div class="container debug bg-dark my-5" style="max-height: 300; overflow-y: auto; color: white"></div>
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/gh/cryptonomic/conseiljs/dist-web/conseiljs.min.js"></script>
+      <script src="./bnb.js"></script>
+   </body>
+</html>
+
