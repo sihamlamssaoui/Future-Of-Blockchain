@@ -1,17 +1,23 @@
-        #sp.verify(self.data.host == sp.sender)
 
+#   dAirBB
+#
+#   _ a smart contract prototype for a decentralised 
+#   accomodation rental market.
+#   Guest and Host agreed a rental protocol that has 
+#   been encoded in this Tezos smart contract.
+#
+#   (c) 2020 Andrea Bracciali and Siham Lamssaoui 
 
 import smartpy as sp
 
 class dAirBB(sp.Contract):
+    host = sp.sender
     def __init__(self):
         self.init(
             guest = sp.test_account("VOID").address, 
-            host = sp.test_account("VOID").address, 
+            host = sp.test_account("VOID").address,
             nuki = sp.test_account("VOID").address,
             rent = sp.tez(0), 
-            #start_date = " ", 
-            #dep_date = " ", 
             g_deposit = sp.tez(0), 
             h_deposit = sp.tez(0),
             active = False,         # G engaged/sent deposit
@@ -28,8 +34,6 @@ class dAirBB(sp.Contract):
         sp.if (params.my_method == "Contract_Initialisation"):
             self.Contract_Initialisation(
                 rent = params.rent, 
-                #start_date = params.start_date, 
-                #dep_date = params.dep_date, 
                 g_deposit = params.g_deposit, 
                 h_deposit = params.h_deposit, 
                 host = params.host, 
@@ -72,16 +76,22 @@ class dAirBB(sp.Contract):
     # The Guest will be identified when paying the g_deposit
     #
     def Contract_Initialisation(self, rent, g_deposit, h_deposit, host, guest, nuki, cp): 
-        #, id, start_date, dep_date):
         self.data.rent = rent
-        #self.data.start_date = start_date
-        #self.data.dep_date = dep_date
         self.data.g_deposit = g_deposit
         self.data.h_deposit = h_deposit
         self.data.host = host
         self.data.guest = guest
         self.data.nuki = nuki
         self.data.cp = cp
+        #                The follwoing for resetting purposes
+        #                when testing the contract.
+        #  >>>>>>        TOBEDONE: reset the balance to 0
+        #
+        self.active = False,         # G engaged/sent deposit
+        self.in_house = False,       # G in house
+        self.grace_ended = False,    # No more complaints
+        self.complaint = False,      # G complained
+        self.refund = False,         # G accepted refund
         # self.data.contract_id = id
         sp.verify(h_deposit == sp.amount)
         sp.verify(self.data.host == sp.sender)
@@ -185,6 +195,8 @@ class dAirBB(sp.Contract):
     # CAREFULL: if G left, and reasonably the contract has 
     # been liquidated, there might not be any money in 
     # the balance of the contract.
+    # 
+    
     #
     def Grace_Period_Ended(self):
         sp.verify(sp.sender == self.data.nuki)
@@ -533,6 +545,9 @@ def test():
             nuki = nuki.address,
             cp = 0).run(sender = gaia)
             
+    #
+    #   Run as disaster scenario ...
+    #
     # scenario.h2("Guest Leaves Contract")
     # scenario += c1.Contract_Call(
     #         my_method = "Guest_Leaves_Contract",
@@ -563,4 +578,4 @@ def test():
 
 
 
-
+            
