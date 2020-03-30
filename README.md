@@ -44,10 +44,10 @@ The web applications are developped using the ConseilJs framework on top of HTML
   https://carthagenet.tzstats.com/KT18pDcpc91w9uyTASnECL911kyrJAW9XpcB
 
 ## Watch a demo: 
- - demo 1: Introducing the decentralized AirBnB protocol
- - demo 2: Presenting the backend (smart contract)
- - demo 3: Presenting the user Interface ( HTML 5 & JavaScript)
- - demo 4: Presenting the interaction between the user interface & contract using conseiljs 
+ - demo 1: <a  href="www.cs.stir.ac/~abb/video_1.mp4" target ="_">Introducing the decentralized AirBnB protocol </a>
+ - demo 2: <a  href="www.cs.stir.ac/~abb/video_2.mp4" target ="_">Presenting the smart contract (SmartPy)</a>
+ - demo 3: <a  href="www.cs.stir.ac/~abb/video_3.mp4" target ="_">Presenting the web applications ( HTML 5 & JavaScript)</a>
+ - demo 4: <a  href="www.cs.stir.ac/~abb/video_4.mp4" target ="_">Presenting the interaction between the user interface & contract using ConseilJs </a>
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
