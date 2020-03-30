@@ -7,7 +7,7 @@
 
 This project is about a proof of concept smart contract for the decentralised negotiation of rental agreements. 
 
-dAirBnB is described in more detail in the associated paper. 
+dAirBnB is described in more detail in the associated paper dAirBnB.pdf. 
 
 Herbert, an host, and Gaia, a guest, freely negotiate the terms of their rental agreement. Such an agreement is then encoded in a Tezos smart contract which guarantees that the agreed terms can not be modified or tampered with, even in the presence of dishonest participants. A double escrow framework (both H and G pay a deposit) incentivates participants to bring the contract to a successful end.
 
@@ -44,10 +44,10 @@ The web applications are developped using the ConseilJs framework on top of HTML
   https://carthagenet.tzstats.com/KT18pDcpc91w9uyTASnECL911kyrJAW9XpcB
 
 ## Watch a demo: 
- - demo 1: <a  href="http://www.cs.stir.ac/~abb/video_1.mp4" target ="_">Introducing the decentralized AirBnB protocol </a>
- - demo 2: <a  href="http://www.cs.stir.ac/~abb/video_2.mp4" target ="_">Presenting the smart contract (SmartPy)</a>
- - demo 3: <a  href="http://www.cs.stir.ac/~abb/video_3.mp4" target ="_">Presenting the web applications ( HTML 5 & JavaScript)</a>
- - demo 4: <a  href="http://www.cs.stir.ac/~abb/video_4.mp4" target ="_">Presenting the interaction between the user interface & contract using ConseilJs </a>
+ - demo 1: <a  href="http://www.cs.stir.ac.uk/~abb/video_1.mp4" target ="_">Introducing the decentralized AirBnB protocol </a>
+ - demo 2: <a  href="http://www.cs.stir.ac.uk/~abb/video_2.mp4" target ="_">Presenting the smart contract (SmartPy)</a>
+ - demo 3: <a  href="http://www.cs.stir.ac.uk/~abb/video_3.mp4" target ="_">Presenting the web applications ( HTML 5 & JavaScript)</a>
+ - demo 4: <a  href="http://www.cs.stir.ac.uk/~abb/video_4.mp4" target ="_">Presenting the interaction between the user interface & contract using ConseilJs </a>
 
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
