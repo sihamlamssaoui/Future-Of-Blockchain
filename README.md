@@ -1,7 +1,9 @@
 ## Future-Of-Blockchain
 
 #  dAirBnB
-## a decentralised accomodation rental market on the Tezos blockchain
+## A decentralised accomodation rental market on the Tezos blockchain
+
+
 
 This project is about a proof of concept smart contract for the decentralised negotiation of rental agreements. 
 
