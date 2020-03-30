@@ -19,11 +19,11 @@ The smart contract is deployed to the Tezos Cartaghenet testnet, and developed i
 
 The web applications are developped using the ConseilJs framework on top of HTML5 and JavaScript, which allow interfacing with the smart contract. Prototype interfaces for H, G and the smart home system are provided. 
 
-# Test dAirBnB on the Smart.Py simulator:
+## Test dAirBnB on the Smart.Py simulator:
 - copy the code in DAirBnB.py to the editor at https://smartpy.io/dev/ 
 - compile/run it (you may want to change the testing scenario).
 
-# Deploy dAirBnB on the Tezos Carthagenet test net:
+## Deploy dAirBnB on the Tezos Carthagenet test net:
 - copy the code in DAirBnB.py to the editor at https://smartpy.io/dev/ 
 - compile/run the code, on Michelson click deploy Contract
 - follow the instraction to originate and deploy the contract on the testnet
@@ -32,7 +32,7 @@ The web applications are developped using the ConseilJs framework on top of HTML
   https://carthagenet.tzstats.com/KT18pDcpc91w9uyTASnECL911kyrJAW9XpcB
 
 
-# Execute the dAirBnB agreement protocol using web applications:
+## Execute the dAirBnB agreement protocol using web applications:
 - clone the project (you need .html + .js)
 - run DAirBnB.html on your Browser (run it in three windows and launch the different interfaces)
 - start playing with the contract using the three interfaces
