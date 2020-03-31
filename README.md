@@ -52,4 +52,9 @@ The web applications are developped using the ConseilJs framework on top of HTML
  - demo 4: <a  href="http://www.cs.stir.ac.uk/~abb/video_4.mp4" target ="_">Presenting the interaction between the user interface & contract using ConseilJs </a>
 
 
+
+### Contacts
+abracciali@gmail.com
+sihamlamssaoui@gmail.com
+
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
