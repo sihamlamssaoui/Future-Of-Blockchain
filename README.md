@@ -44,6 +44,8 @@ The web applications are developped using the ConseilJs framework on top of HTML
   https://carthagenet.tzstats.com/KT18pDcpc91w9uyTASnECL911kyrJAW9XpcB
 
 ## Watch a demo: 
+ (in case of problems you may want to download the file and use your preferred mp4 viewer)
+ 
  - demo 1: <a  href="http://www.cs.stir.ac.uk/~abb/video_1.mp4" target ="_">Introducing the decentralized AirBnB protocol </a>
  - demo 2: <a  href="http://www.cs.stir.ac.uk/~abb/video_2.mp4" target ="_">Presenting the smart contract (SmartPy)</a>
  - demo 3: <a  href="http://www.cs.stir.ac.uk/~abb/video_3.mp4" target ="_">Presenting the web applications ( HTML 5 & JavaScript)</a>
