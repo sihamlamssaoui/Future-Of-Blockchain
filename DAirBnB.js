@@ -446,7 +446,8 @@ $(function () {
 
 async function nodeActivation(params, keyStore, amount){  
     console.log("hello");
-    let result = await conseiljs.TezosNodeWriter.sendContractInvocationOperation(tezosNode, keyStore, contractAddress, amount, 500000, '', 1000, 750000, undefined, params, paramFormat);
+    let result = await conseiljs.TezosNodeWriter.sendContractInvocationOperation(tezosNode, keyStore, contractAddress, amount,
+                   500000, '', 1000, 750000, undefined, params, paramFormat);
     return result;
 }
 
